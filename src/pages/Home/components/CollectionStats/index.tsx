@@ -20,7 +20,7 @@ const CollectionStats: FC = () => {
 
   const renderStats = useMemo(() => {
     if (!isUndefined(data) || !isLoading) {
-      const { floorPrice, numListed, numMints, sales24h, volume24h } = data;
+      const { buyNowPrice, numListed, numMints, sales24h, volume24h } = data;
       return (
         <Box
           p={6}
@@ -50,7 +50,7 @@ const CollectionStats: FC = () => {
               {/* <Badge size="lg" color={floor24h >= 0 ? "green" : "red"}>
                 {(floor24h * 100).toFixed(2)}%
               </Badge>{" "} */}
-              {(floorPrice / LAMPORTS_PER_SOL).toFixed(2)} SOL
+              {(buyNowPrice / LAMPORTS_PER_SOL).toFixed(2)} SOL
             </Text>
             <Text fw={700}>Listed:</Text>
             <Text fw={700} align="right">
